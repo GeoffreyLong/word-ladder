@@ -4,6 +4,8 @@ body {
   width: 100%;
   min-height: 300px;
   min-width: 300px;
+  background-color: #ececec;
+  overflow: hidden;
 }
 /* Padding for the main content */
 #topMenu {
@@ -13,4 +15,31 @@ body {
 md-toolbar .md-input-focused label {
 /* Override blending */
   color: rgba(0,0,0,0.38) !important;
+}
+#gameContainer {
+  background: #fff;
+  height: 80%;
+  width: 80%;
+  margin: auto;
+  margin-top: 70px;
+  overflow: hidden;
+}
+#gameContainer #topButtons {
+  height: 75px;
+  width: 80%;
+  margin: auto;
+}
+#gameContainer #leftButtons {
+  width: 75px;
+  height: 80%;
+}
+#gameContainer #rightButtons {
+  width: 75px;
+  height: 80%;
+}
+#gameContainer .buttonContainer {
+  background-color: #123456;
+}
+#gameContainer #gameBoardContainer {
+  margin-bottom: 20px;
 }
