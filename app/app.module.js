@@ -1,3 +1,4 @@
 angular.module('wordLadder', [
-    'ngMaterial'
+    'ngMaterial',
+    'game'
 ]);
