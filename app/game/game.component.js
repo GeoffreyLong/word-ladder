@@ -6,17 +6,44 @@ angular.module('game').component('game', {
     $scope.rightLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
 
     // Orientation should always alternate
-    // Shouldn't force the first word to be vertical...
-    //    I could force it by populating the first word myself
-    //    With something like "start"... that might be a good option!
-    // The first word always comes first in the array
+    // Force the first word to be vertical by prepopulating it
+    // Data structure
+    //    An array of objects, 
+    //        the first object in array is the first to populate
+    //        the last object in array is current.
+    //        An even index is vertical, odd is horizontal
+    //    letters:    The letters of the word
+    //    lowerPivot: The index of the letter that connects to the previous word
+    //                This is only -1 in the first case.
+    //    upperPivot: The index of the letter that connects to the next word
+    //                This is -1 until the word is 'solidified'
+    //    curSelected:The index of the letter currently selected
+    //                If another letter is selected that is not in the orientation
+    //                  If the word is valid and the curSelected != lowerPivot 
+    //                    the upperPivot becomes curSelected
+    //                    TODO check the curSelected != lowerPivot
+    //                       What if the new word starts from the very top
+    //                       of an old word. Should I prevent continuing old words?
+    //                       It certainly makes it easier, but is it best for the game?
+    //                Then the pivot becomes the curSelected if the word is valid
+    //                And you are on a new word, curSelected becomes -1
+    // TODO: I don't think this will work properly for quadruply connected letters
     $scope.gameLetters = [{
-      orientation: 'v',
-      word: 'hello'
+      letters: ['s', 't', 'a', 'r', 't'],
+      lowerPivot: -1,
+      upperPivot: 4,
+      curSelected: -1
     }, {
-      orientation: 'h',
-      word: 'game'
-    ];
+      letters: ['t', 'a', 'm', 'e'],
+      lowerPivot: 0,
+      upperPivot: 2,
+      curSelected: -1
+    }, {
+      letters: ['m', 'e', 'a', 'n'], 
+      lowerPivot: 0,
+      upperPivot: -1,
+      curSelected: 1
+    }];
 
     $scope.letterPressed = function(letter) {
       console.log(letter);
