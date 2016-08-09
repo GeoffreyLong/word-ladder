@@ -1,5 +1,8 @@
 <div id="gameContainer">
   <div id="topButtons" class="buttonContainer"> 
+    <md-button ng-repeat="letter in topLetters" ng-click="letterPressed(letter)">
+      {{letter}}
+    </md-button>
   
   </div>
   <div layout="row" layout-align="space-between center">
