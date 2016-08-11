@@ -27,7 +27,12 @@ angular.module('game').component('game', {
     //                       It certainly makes it easier, but is it best for the game?
     //                Then the pivot becomes the curSelected if the word is valid
     //                And you are on a new word, curSelected becomes -1
-    // TODO: I don't think this will work properly for quadruply connected letters
+    // TODO I don't think this will work properly for quadruply connected letters
+    //      I guess I could check if the upper pivot is one away from the lower
+    //      Then there would be some clashing
+    //      Else I could theorize an alternate data structure
+    //          The first that comes to mind is a 2d array
+    //              This gets tricky though because it is shifting and growing
     $scope.gameLetters = [{
       letters: ['s', 't', 'a', 'r', 't'],
       lowerPivot: -1,
