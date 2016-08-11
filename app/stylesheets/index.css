@@ -43,3 +43,6 @@ md-toolbar .md-input-focused label {
 #gameContainer #gameBoardContainer {
   margin-bottom: 20px;
 }
+#gameContainer #gameBoardContainer #gameBoard {
+  position: relative;
+}
