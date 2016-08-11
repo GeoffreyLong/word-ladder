@@ -11,18 +11,15 @@
     </div>
     <div id="gameBoardContainer">
       <div id="gameBoard">
-        <div ng-repeat="gameLetter in gameLetters track by $index">
-          <div ng-if="$index % 2 === 0"> 
-            <md-button ng-repeat="letter in gameLetter.letters track by $index">
-              {{letter}}
-            </md-button>
-          </div>
-          <div ng-if="$index % 2 === 1"> 
-            <md-button ng-repeat="letter in gameLetter.letters track by $index">
-              {{letter}}
-            </md-button>
-          </div>
+        <md-button ng-repeat="gameLetter in gameLetters.enabled track by $index">
+          {{gameLetter.letter}}
+        </md-button>
+        <div ng-repeat="gameWord in gameLetters.disabled track by $index">
+          <md-button ng-repeat="gameLetter in gameWord track by $index">
+            {{gameLetter.letter}}
+          </md-button>
         </div>
+        {{position()}}
       </div>
     </div>
     <div id="leftButtons" class="buttonContainer">
