@@ -11,12 +11,8 @@
     </div>
     <div id="gameBoardContainer">
       <div id="gameBoard">
-        <letter ng-repeat="gameLetter in gameLetters.enabled track by $index" 
+        <letter ng-repeat="gameLetter in game.gameLetters track by $index" 
                 letter-info="gameLetter"></letter>
-        <div ng-repeat="gameWord in gameLetters.disabled track by $index">
-          <letter ng-repeat="gameLetter in gameWord track by $index" 
-                  letter-info="gameLetter"></letter>
-        </div>
       </div>
       {{positionBoard()}}
     </div>
