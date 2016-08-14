@@ -1,13 +1,16 @@
 <div id="gameContainer">
   <div id="topButtons" class="buttonContainer"> 
-    <md-button ng-repeat="letter in topLetters" ng-click="letterPressed(letter)">
+    <md-button class="letterButton" ng-repeat="letter in topLetters" 
+               ng-click="letterPressed(letter, 'top')">
       {{letter}}
     </md-button>
-  
   </div>
-  <div layout="row" layout-align="space-between center">
-    <div id="rightButtons" class="buttonContainer">
-      ok
+  <div layout="row" layout-align="space-between start">
+    <div id="rightButtons" class="buttonContainer" layout="column">
+      <md-button class="letterButton" ng-repeat="letter in leftLetters" 
+                 ng-click="letterPressed(letter, 'left')">
+        {{letter}}
+      </md-button>
     </div>
     <div id="gameBoardContainer">
       <div id="gameBoard">
@@ -16,8 +19,11 @@
       </div>
       {{positionBoard()}}
     </div>
-    <div id="leftButtons" class="buttonContainer">
-      ok
+    <div id="leftButtons" class="buttonContainer" layout="column">
+      <md-button class="letterButton" ng-repeat="letter in rightLetters" 
+                 ng-click="letterPressed(letter, 'right')">
+        {{letter}}
+      </md-button>
     </div>
   </div>
 </div>

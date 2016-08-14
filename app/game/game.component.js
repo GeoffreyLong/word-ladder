@@ -5,6 +5,11 @@ angular.module('game').component('game', {
     $scope.topLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
     $scope.rightLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
 
+    var current = {
+      direction: 'right',
+      offsetX: 4,
+      offsetY: 7
+    };
     // Orientation should always alternate
     // Force the first word to be vertical by prepopulating it
     // Data structure
@@ -19,7 +24,6 @@ angular.module('game').component('game', {
     // ALTR I can do non-overlapping for vertical and overlapping for horiz
     //      This means that I have to add a cur selected
     $scope.game = {
-      direction: 'vert',
       gameLetters: [{
         letter: 'r',
         offsetX: 3,
@@ -72,7 +76,7 @@ angular.module('game').component('game', {
       console.log("hello");
       var curLetter = $scope.game.gameLetters[0];
       $('#gameBoard').css({
-        'transform': 'translate(' + curLetter.offsetX * -50 + 'px, ' + curLetter.offsetY * 50 + 'px)'
+        'transform': 'translate(' + curLetter.offsetX * -50 + 'px, ' + (100 + curLetter.offsetY * 50) + 'px)'
       });
     }
 

@@ -11,7 +11,6 @@ html, body
   width: 100%
   height: 15%
 
-
 md-toolbar
   .md-input-focused
     label
@@ -27,20 +26,35 @@ md-toolbar
   overflow: hidden
 
   #topButtons
-    height: 75px
-    width: 80%
     margin: auto
-  #leftButtons
-    width: 75px
-    height: 80%
-  #rightButtons
-    width: 75px
-    height: 80%
+    margin-left: 85px
+    margin-right: 85px
   .buttonContainer
     background-color: #123456
+    text-align: center
+    padding: 10px
+    .letterButton
+      height: 20px
+      width: 50px
+      min-width: 50px
+
 
   #gameBoardContainer
     margin-bottom: 20px
     #gameBoard
       position: relative
+
+      letter
+        width: 50px
+        height: 50px
+        cursor: default
+        text-transform: uppercase
+        -webkit-user-select: none; /* Chrome/Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+ */
+
+        /* Rules below not implemented in browsers yet */
+        -o-user-select: none;
+        user-select: none;
+
 

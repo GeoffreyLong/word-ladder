@@ -25,24 +25,35 @@ md-toolbar .md-input-focused label {
   overflow: hidden;
 }
 #gameContainer #topButtons {
-  height: 75px;
-  width: 80%;
   margin: auto;
-}
-#gameContainer #leftButtons {
-  width: 75px;
-  height: 80%;
-}
-#gameContainer #rightButtons {
-  width: 75px;
-  height: 80%;
+  margin-left: 85px;
+  margin-right: 85px;
 }
 #gameContainer .buttonContainer {
   background-color: #123456;
+  text-align: center;
+  padding: 10px;
+}
+#gameContainer .buttonContainer .letterButton {
+  height: 20px;
+  width: 50px;
+  min-width: 50px;
 }
 #gameContainer #gameBoardContainer {
   margin-bottom: 20px;
 }
 #gameContainer #gameBoardContainer #gameBoard {
   position: relative;
+}
+#gameContainer #gameBoardContainer #gameBoard letter {
+  width: 50px;
+  height: 50px;
+  cursor: default;
+  text-transform: uppercase;
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+/* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
 }
