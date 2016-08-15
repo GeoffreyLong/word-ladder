@@ -1,7 +1,7 @@
 <div id="gameContainer">
   <div id="topButtons" class="buttonContainer"> 
     <md-button class="letterButton" ng-repeat="letter in topLetters" 
-               ng-click="letterPressed(letter, 'top')">
+               ng-click="letterPressed(letter, 'up')">
       {{letter}}
     </md-button>
   </div>
@@ -14,7 +14,9 @@
     </div>
     <div id="gameBoardContainer">
       <div id="gameBoard">
-        <letter ng-repeat="gameLetter in game.gameLetters track by $index" 
+        <!-- NOTE tracking by index does not work with unshifting
+                  it simply repeats the last element in the array -->
+        <letter ng-repeat="gameLetter in game.gameLetters" 
                 letter-info="gameLetter"></letter>
       </div>
       {{positionBoard()}}
