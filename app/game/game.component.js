@@ -155,61 +155,6 @@ angular.module('game').component('game', {
       }
 
       return true;
-
-      /* NOTE this has a bug if run for a bit (error when snaking letters)
-       * Also, it is unnecessary since we only need to check the last word
-      var curX = -1;
-      var curY = -1;
-      var curWord = "";
-      var lastLetter = "";
-      var valid = true;
-      for (letterIdx in $scope.game.gameLetters) {
-        var letter = $scope.game.gameLetters[letterIdx]
-        if (curX === letter.offsetX || curY === letter.offsetY) {
-          
-          // Ensures that go left don't print backwards
-          if (letter.offsetX < curX) {
-            curWord = letter.letter + curWord;  
-          }
-          else {
-            curWord += letter.letter;
-          }
-        }
-        else {
-          // NOTE temporary forced 3 letter words to avoid double back clusters
-          if (curWord.length < 3 && curX != -1) {
-            alert("Words have to be at least 3 letters");
-            return false;
-          }
-
-          if (!isWord(curWord)) {
-            alert('"' + curWord + '" is not a word!');
-            return false;
-          }
-
-          // The first half of this statement is for words that go right
-          // The second half checks ensures that ups don't get flagged in up-right-up
-          //    In these, the transition is up-right-up, so the change in y will be 2
-          if (letter.offsetX < curX && letter.offsetY < curY - 1) {
-            curWord = letter.letter + lastLetter;  
-          }
-          else {
-            curWord = lastLetter + letter.letter;
-          }
-          
-          curX = letter.offsetX;
-          curY = letter.offsetY;
-        }
-
-        lastLetter = letter.letter;
-      }
-      
-      // NOTE the last word never gets checked in the above loop
-      //      this is fine though, since it is the seed word "start"
-      // console.log(curWord);
-
-      return true;
-      */
     }
 
     // TODO TODO TODO
