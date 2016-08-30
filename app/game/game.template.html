@@ -1,9 +1,18 @@
 <div id="gameContainer">
-  <div id="topButtons" class="buttonContainer"> 
-    <md-button class="letterButton" ng-repeat="letter in topLetters" 
-               ng-click="letterPressed(letter, 'up')">
-      {{letter}}
-    </md-button>
+  <div id="topRow" layout="row" layout-align="start center">
+    <div class="padTop">
+      <md-button ng-click="undo()">
+        <md-icon class="material-icons"> undo </md-icon>
+      </md-button>
+    </div>
+    <div flex id="topButtons" class="buttonContainer"> 
+      <md-button class="letterButton" ng-repeat="letter in topLetters" 
+                 ng-click="letterPressed(letter, 'up')">
+        {{letter}}
+      </md-button>
+    </div>
+    <div class="padTop">
+    </div>
   </div>
   <div layout="row" layout-align="space-between start">
     <div id="rightButtons" class="buttonContainer" layout="column">

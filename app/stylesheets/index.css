@@ -24,10 +24,13 @@ md-toolbar .md-input-focused label {
   margin-top: 70px;
   overflow: hidden;
 }
-#gameContainer #topButtons {
-  margin: auto;
-  margin-left: 85px;
-  margin-right: 85px;
+#gameContainer #topRow .padTop {
+  width: 85px;
+  text-align: center;
+}
+#gameContainer #topRow .padTop button {
+  width: 50px;
+  min-width: 50px;
 }
 #gameContainer .buttonContainer {
   background-color: #123456;

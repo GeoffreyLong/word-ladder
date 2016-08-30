@@ -76,6 +76,11 @@ angular.module('game').component('game', {
       });
     }
 
+    // TODO will need to doctor the letters on the side of the board as well...
+    $scope.undo = function() {
+      $scope.game.gameLetters.shift();
+    }
+
     $scope.letterPressed = function(letter, dir) {
       var valid = true;
       var letters = $scope.game.gameLetters;
