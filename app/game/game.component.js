@@ -1,10 +1,12 @@
 angular.module('game').component('game', {
   templateUrl: 'game/game.template.html',
-  controller: function GameController($scope, letterService){
+  controller: function GameController($scope, letterService, dictService){
     $scope.leftLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
     $scope.topLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
     $scope.rightLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
 
+    // alert(letterService.initialSeed(7));
+    
     // Orientation should always alternate
     // Force the first word to be vertical by prepopulating it
     // Data structure
@@ -21,30 +23,6 @@ angular.module('game').component('game', {
     $scope.game = {
       direction: 'up',
       gameLetters: [{
-        letter: 'r',
-        offsetX: 3,
-        offsetY: 7
-      }, {
-        letter: 'e',
-        offsetX: 3,
-        offsetY: 6
-      }, {
-        letter: 'n',
-        offsetX: 3,
-        offsetY: 5
-      }, {
-        letter: 'd',
-        offsetX: 3,
-        offsetY: 4
-      }, {
-        letter: 'n',
-        offsetX: 2,
-        offsetY: 4
-      }, {
-        letter: 'e',
-        offsetX: 1,
-        offsetY: 4
-      }, {
         letter: 's',
         offsetX: 0,
         offsetY: 4

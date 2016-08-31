@@ -1,3 +1,4 @@
 angular.module('game', [
-  'letterService'    
+  'letterService',
+  'dictService'
 ]);
