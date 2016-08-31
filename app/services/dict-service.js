@@ -9,6 +9,7 @@ angular.module('dictService', []).service('dictService', function($http) {
   //        This has no proper nouns, no words longer than 10 characters,
   //        no hyphenated or diacritic symbols
   //        TODO this is preferred
+  //             Especially since words like "fed" are not in the current list
   //    The ENABLE list
   //    Or https://github.com/sindresorhus/word-list
   //        In this case I would have to run Express I think
@@ -36,7 +37,10 @@ angular.module('dictService', []).service('dictService', function($http) {
   }
 
   this.checkWord = function(word) {
-    console.log(dict.indexOf(word));
+    var idx = dict.indexOf(word);
+    console.log(idx);
+    if (idx < 0) return false;
+    return true;
   }
 
 });

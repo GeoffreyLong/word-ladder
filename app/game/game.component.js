@@ -125,24 +125,21 @@ angular.module('game').component('game', {
           curWord += curLetter.letter;
         }
         letterIdx ++;
-        curLetter = letters[letterIdx]
+        curLetter = letters[letterIdx];
+
+        // NOTE could probably remove this via hacks
+        if (letterIdx == letters.length) break;
       }
 
       if (curWord.length < 3) {
         alert("Words have to be at least 3 letters");
         return false;
       }
-      if (!isWord(curWord)) {
+      if (!dictService.checkWord(curWord)) {
         alert('"' + curWord + '" is not a word!');
         return false;
       }
 
-      return true;
-    }
-
-    // TODO TODO TODO
-    var isWord = function(word) {
-      console.log(word);
       return true;
     }
   }
