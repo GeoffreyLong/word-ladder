@@ -1,1 +1,3 @@
-angular.module('game', []);
+angular.module('game', [
+  'letterService'    
+]);

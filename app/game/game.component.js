@@ -1,6 +1,6 @@
 angular.module('game').component('game', {
   templateUrl: 'game/game.template.html',
-  controller: function GameController($scope){
+  controller: function GameController($scope, letterService){
     $scope.leftLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
     $scope.topLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
     $scope.rightLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
