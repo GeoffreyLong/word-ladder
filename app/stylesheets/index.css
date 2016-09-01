@@ -5,7 +5,6 @@ body {
   min-height: 300px;
   min-width: 300px;
   background-color: #ececec;
-  overflow: hidden;
 }
 /* Padding for the main content */
 #topMenu {
@@ -20,8 +19,11 @@ md-toolbar .md-input-focused label {
   background: #fff;
   height: 80%;
   width: 80%;
+/* TODO shouldn't have to be explicit here */
+  min-height: 520px;
   margin: auto;
   margin-top: 70px;
+  margin-bottom: 70px;
   overflow: hidden;
 }
 #gameContainer #topRow .padTop {
