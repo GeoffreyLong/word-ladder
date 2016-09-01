@@ -54,8 +54,14 @@ angular.module('game').component('game', {
     }
 
     // TODO will need to doctor the letters on the side of the board as well...
+    // Should I make it so that you can only go back one word?
+    //    This would make it easier I think
+    //    At least in terms of implementing the last TODO I think
+    //    And in implementing alternate behaviours for letter regeneration
     $scope.undo = function() {
-      $scope.game.gameLetters.shift();
+      if ($scope.game.gameLetters.length > 5) {
+        $scope.game.gameLetters.shift();
+      }
     }
 
     $scope.letterPressed = function(index, dir) {

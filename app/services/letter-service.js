@@ -10,6 +10,9 @@ angular.module('letterService', []).service('letterService', function() {
   //              vowelWeighted: Random, but vowels are more likely
   //          numLetters: The number of letters for each side
   //          minVowels: Boolean for whether or not a vowel is required
+  //          letterRegen: Need a better name, but this is the behaviour for the nextLetter
+  //              continuous: Each time nextLetter is called a letter is served
+  //              end: The letters are only renewed when on a new word
 
   // TODO add some sort of logic to the undo that tracks the letters
   //      When someone clicks "undo" the letter needs to be saved
