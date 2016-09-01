@@ -9,7 +9,7 @@ angular.module('letterService', []).service('letterService', function() {
   //                    frequency of use in the English Language
   //              vowelWeighted: Random, but vowels are more likely
   //          numLetters: The number of letters for each side
-  //          requireVowel: Boolean for whether or not a vowel is required
+  //          minVowels: Boolean for whether or not a vowel is required
 
   // TODO add some sort of logic to the undo that tracks the letters
   //      When someone clicks "undo" the letter needs to be saved
@@ -45,6 +45,7 @@ angular.module('letterService', []).service('letterService', function() {
     return letters;
   }
 
+  // TODO need to include minVowels in here
   this.nextLetter = function() {
     return possibleLetters.charAt(Math.floor(Math.random() * possibleLetters.length));
   }

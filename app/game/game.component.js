@@ -58,11 +58,10 @@ angular.module('game').component('game', {
       $scope.game.gameLetters.shift();
     }
 
-    $scope.letterPressed = function(letter, dir) {
+    $scope.letterPressed = function(index, dir) {
       var valid = true;
       var letters = $scope.game.gameLetters;
       var lastLetter = letters[0];
-      var curLetter = {letter: letter};
 
       if (dir !== $scope.game.direction) {
         console.log("change");
@@ -76,16 +75,31 @@ angular.module('game').component('game', {
       }
 
       if (dir === 'up' && valid) {
+        var letter = $scope.topLetters[index];
+        $scope.topLetters[index] = letterService.nextLetter();
+        
+        var curLetter = {letter: letter};
+
         curLetter.offsetX = lastLetter.offsetX;
         curLetter.offsetY = lastLetter.offsetY + 1;
         letters.unshift(curLetter);
       }
       else if (dir === 'left' && valid) {
+        var letter = $scope.leftLetters[index];
+        $scope.leftLetters[index] = letterService.nextLetter();
+
+        var curLetter = {letter: letter};
+
         curLetter.offsetX = lastLetter.offsetX - 1;
         curLetter.offsetY = lastLetter.offsetY;
         letters.unshift(curLetter);
       }
       else if (dir === 'right' && valid) {
+        var letter = $scope.rightLetters[index];
+        $scope.rightLetters[index] = letterService.nextLetter();
+
+        var curLetter = {letter: letter};
+
         curLetter.offsetX = lastLetter.offsetX + 1;
         curLetter.offsetY = lastLetter.offsetY;
         letters.unshift(curLetter);
