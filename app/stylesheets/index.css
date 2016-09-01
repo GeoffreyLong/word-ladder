@@ -34,6 +34,11 @@ md-toolbar .md-input-focused label {
   width: 50px;
   min-width: 50px;
 }
+#gameContainer #topRow .padTop #curScore {
+  font-weight: bold;
+  font-size: 36px;
+  color: #d55;
+}
 #gameContainer .buttonContainer {
   background-color: #123456;
   text-align: center;

@@ -12,6 +12,16 @@
       </md-button>
     </div>
     <div class="padTop">
+      <!--  
+            Can put a cool statistics thing here (graph icon)
+            which would launch a popup showing statistics 
+            like best, trend over games, average word length, etc
+            
+            For now it just shows the current score
+      -->
+      <span id="curScore">
+        {{curScore()}}
+      </span>
     </div>
   </div>
   <div layout="row" layout-align="space-between start">

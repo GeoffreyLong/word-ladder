@@ -155,5 +155,9 @@ angular.module('game').component('game', {
 
       return true;
     }
+
+    $scope.curScore = function() {
+      return $scope.game.gameLetters.length;
+    }
   }
 });
