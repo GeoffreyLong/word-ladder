@@ -6,7 +6,7 @@
       </md-button>
     </div>
     <div flex id="topButtons" class="buttonContainer"> 
-      <md-button class="letterButton" ng-repeat="letter in topLetters" 
+      <md-button class="letterButton" ng-repeat="letter in topLetters track by $index" 
                  ng-click="letterPressed(letter, 'up')">
         {{letter}}
       </md-button>
@@ -16,7 +16,7 @@
   </div>
   <div layout="row" layout-align="space-between start">
     <div id="rightButtons" class="buttonContainer" layout="column">
-      <md-button class="letterButton" ng-repeat="letter in leftLetters" 
+      <md-button class="letterButton" ng-repeat="letter in leftLetters track by $index" 
                  ng-click="letterPressed(letter, 'left')">
         {{letter}}
       </md-button>
@@ -31,7 +31,7 @@
       {{positionBoard()}}
     </div>
     <div id="leftButtons" class="buttonContainer" layout="column">
-      <md-button class="letterButton" ng-repeat="letter in rightLetters" 
+      <md-button class="letterButton" ng-repeat="letter in rightLetters track by $index" 
                  ng-click="letterPressed(letter, 'right')">
         {{letter}}
       </md-button>
